@@ -39,6 +39,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 - [ ] Slide for ContentView
 - [ ] Slide for AddRoutineView
 - [ ] Slide for SelectedRoutineView
+- [ ] Slide for backend architecture (VM and Model)
 - [ ] Demo video
 
 ## Feature Highlights
@@ -55,5 +56,5 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
  - 04/02 - Sketches of app views
  - 04/04 - Skeleton code (i.e. create class & method signatures) for all classes/structs
  - 04/11 - Implementation of all classes/structs
- - 04/15 - Presentation and Demo
+ - 04/15 - Presentation slides and demo video
  - 04/16 - **DEMO DAY**
