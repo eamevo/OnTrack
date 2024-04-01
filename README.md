@@ -10,9 +10,11 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 
 - [x] Enam - Set up project & publish repo to Github
 - [ ] Ishika - Sketch OnboardingView
-- [ ] Ananya - Sketch ContentView (list of routines)
-- [ ] David - Sketch AddRoutineView
-- [ ] Rexwell - Sketch SelectedRoutineView
+- [ ] Rexxwell - Sketch SelectedRoutineView
+- [ ] (Nobody*) - Sketch ContentView (list of routines)
+- [ ] (Nobody*) - Sketch AddRoutineView
+
+*Nobody is assigned to this task yet. Please assign it to yourself if you wish to sketch this.
 
 ### Due by 04/04
 
