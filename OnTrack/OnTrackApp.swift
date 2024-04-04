@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct OnTrackApp: App {
+    @ObservedObject var vm: ViewModel = ViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
