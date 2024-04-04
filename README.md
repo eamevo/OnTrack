@@ -19,10 +19,10 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 ### Due by 04/08
 
 - [ ] Ishika - Minimal working solution for OnboardingView
-- [ ] Ananya - Minimal working solution for ContentView
+- [ ] Ananya - Minimal working solution for ContentView (Main routine list)
 - [ ] David - Minimal working solution for AddRoutineView
 - [ ] Rexxwell - Minimal working solution for SelectedRoutineView
-- [ ] Ishika - Skeleton code for ViewModel
+- [ ] Noah - Skeleton code for ViewModel
 - [ ] Enam - Data fields for Routine (model)
 
 ### Due by 04/11
