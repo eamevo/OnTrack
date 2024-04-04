@@ -9,21 +9,21 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 ### Current Tasks - Due by 04/02
 
 - [x] Enam - Set up project & publish repo to Github
-- [ ] Ishika - Sketch OnboardingView
+- [ ] Enam - Sketch OnboardingView
 - [ ] Rexxwell - Sketch SelectedRoutineView
-- [ ] (Nobody*) - Sketch ContentView (list of routines)
-- [ ] (Nobody*) - Sketch AddRoutineView
+- [x] Ananya - Sketch ContentView (list of routines)
+- [ ] Enam - Sketch AddRoutineView
 
 *Nobody is assigned to this task yet. Please assign it to yourself if you wish to sketch this.
 
-### Due by 04/04
+### Due by 04/08
 
-- [ ] Skeleton code for OnboardingView
-- [ ] Skeleton code for ContentView
-- [ ] Skeleton code for AddRoutineView
-- [ ] Skeleton code for SelectedRoutineView
-- [ ] Skeleton code for ViewModel
-- [ ] Skeleton code for Routine (model)
+- [ ] Ishika - Minimal working solution for OnboardingView
+- [ ] Ananya - Minimal working solution for ContentView
+- [ ] David - Minimal working solution for AddRoutineView
+- [ ] Rexxwell - Minimal working solution for SelectedRoutineView
+- [ ] Ishika - Skeleton code for ViewModel
+- [ ] Enam - Data fields for Routine (model)
 
 ### Due by 04/11
 
@@ -32,7 +32,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 - [ ] Full implementation for AddRoutineView
 - [ ] Full implementation for SelectedRoutineView
 - [ ] Full implementation for ViewModel
-- [ ] Full implementation for Routine (model)
+- [ ] Additional functionality for Routine (model)
 
 ### Due by 04/15
 
