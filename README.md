@@ -9,7 +9,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 ### Current Tasks - Due by 04/02
 
 - [x] Enam - Set up project & publish repo to Github
-- [ ] Enam - Sketch OnboardingView
+- [X] Enam - Sketch OnboardingView
 - [ ] Rexxwell - Sketch SelectedRoutineView
 - [x] Ananya - Sketch ContentView (list of routines)
 - [ ] Enam - Sketch AddRoutineView
