@@ -17,7 +17,7 @@ struct routineStruct: CustomStringConvertible{
     }
 }
 
-struct Task{
+struct Task: CustomStringConvertible{
     let name:String
     var completed:Bool
 //    mutating func updateyesOrNo(){
