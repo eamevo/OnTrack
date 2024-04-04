@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct routineStruct: CustomStringConvertible{
     let name:String
     let routineDescription:String
@@ -19,12 +20,15 @@ struct routineStruct: CustomStringConvertible{
 struct Task{
     let name:String
     var completed:Bool
-  //figuring out a way to use completed bool
+//    mutating func updateyesOrNo(){
+//        if completed == true{
+//            Bool = "Yes"}
+//        else if completed == false{
+//            yesOrNo = "No"
+//        }
         
     var description: String{"Task: \(name), Completed? \(completed) "}
     }
-}
-
 
 var routines:[routineStruct]=[]
 
