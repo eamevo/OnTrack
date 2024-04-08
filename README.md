@@ -12,6 +12,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 - [ ] Ananya - Minimal working solution for ContentView (Main routine list)
 - [ ] David - Minimal working solution for AddRoutineView
 - [ ] Rexxwell - Minimal working solution for SelectedRoutineView
+- [ ] Rexxwell - Sketch SelectedRoutineView
 - [x] Noah - Skeleton code for ViewModel
 - [ ] Enam - Data fields for Routine (model)
 
@@ -57,6 +58,5 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 
 - [x] Enam - Set up project & publish repo to Github
 - [x] Enam - Sketch OnboardingView
-- [ ] Rexxwell - Sketch SelectedRoutineView
 - [x] Ananya - Sketch ContentView (list of routines)
 - [x] Enam - Sketch AddRoutineView
