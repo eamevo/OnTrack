@@ -16,7 +16,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 
 *Nobody is assigned to this task yet. Please assign it to yourself if you wish to sketch this.
 
-### Due by 04/08
+### Due by 04/09
 
 - [ ] Ishika - Minimal working solution for OnboardingView
 - [ ] Ananya - Minimal working solution for ContentView (Main routine list)
@@ -25,7 +25,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 - [x] Noah - Skeleton code for ViewModel
 - [ ] Enam - Data fields for Routine (model)
 
-### Due by 04/11
+### Due by 04/15
 
 - [ ] Full implementation for OnboardingView
 - [ ] Full implementation for ContentView
@@ -34,7 +34,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 - [ ] Full implementation for ViewModel
 - [ ] Additional functionality for Routine (model)
 
-### Due by 04/15
+### Due by 04/16
 
 - [ ] Introductory slides
 - [ ] Slide for OnboardingView
@@ -56,7 +56,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 
  - 03/28 - Finalize app concept & set up project repo
  - 04/02 - Sketches of app views
- - 04/04 - Skeleton code (i.e. create class & method signatures) for all classes/structs
- - 04/11 - Implementation of all classes/structs
- - 04/15 - Presentation slides and demo video
- - 04/16 - **DEMO DAY**
+ - 04/09 - Skeleton code (i.e. create class & method signatures) for all classes/structs
+ - 04/15 - Implementation of all classes/structs
+ - 04/16 - Presentation slides and demo video
+ - 04/18 - **DEMO DAY**
