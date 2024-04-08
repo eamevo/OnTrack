@@ -6,17 +6,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 
 [Google Docs - Planning document](https://docs.google.com/document/d/10MLJMOxv38Fu246DndurLDr7_QEBVr7DyX2Jv6Vz6rM/edit)
 
-### Current Tasks - Due by 04/02
-
-- [x] Enam - Set up project & publish repo to Github
-- [x] Enam - Sketch OnboardingView
-- [ ] Rexxwell - Sketch SelectedRoutineView
-- [x] Ananya - Sketch ContentView (list of routines)
-- [x] Enam - Sketch AddRoutineView
-
-*Nobody is assigned to this task yet. Please assign it to yourself if you wish to sketch this.
-
-### Due by 04/09
+### CURRENT TASKS - Due by 04/09
 
 - [ ] Ishika - Minimal working solution for OnboardingView
 - [ ] Ananya - Minimal working solution for ContentView (Main routine list)
@@ -60,3 +50,13 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
  - 04/15 - Implementation of all classes/structs
  - 04/16 - Presentation slides and demo video
  - 04/18 - **DEMO DAY**
+
+## Old tasks
+
+### Due by 04/02
+
+- [x] Enam - Set up project & publish repo to Github
+- [x] Enam - Sketch OnboardingView
+- [ ] Rexxwell - Sketch SelectedRoutineView
+- [x] Ananya - Sketch ContentView (list of routines)
+- [x] Enam - Sketch AddRoutineView
