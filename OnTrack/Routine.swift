@@ -13,11 +13,16 @@ import Foundation
 
 struct Routine: Identifiable {
     var id: String
-    // TODO: Add data fields
     // - Title
+    let title: String
     // - Description
+    let description: String
     // - Category (can be string for simplicity)
+    var category: String
     // - Frequency (typically measured in seconds, e.g. 86400 = 1 day)
+    var frequency: Int
     // - List of dates that routine was followed
+    var successfulDays: [String]
     // - Current streak length
+    var currentStreak: Int
 }
