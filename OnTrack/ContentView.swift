@@ -18,7 +18,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Hello, \(vm.getDailyQuote())")
+            Text("Hello, \(vm.name)")
                 .padding()
             
             Text(vm.getDailyQuote())
@@ -32,6 +32,7 @@ struct ContentView: View {
                     Spacer()
                     VStack {
                         Text(routine.name)
+                            .bold()
                         Text(routine.description)
                     }
                 }
@@ -41,8 +42,6 @@ struct ContentView: View {
                 Text("Add Routine")
             }
             .padding()
-            .onAppear {
-                vm.loadFromStorage()
                 
                 Text("\(numComplete)/\(vm.routines.count)")
                 .padding()
