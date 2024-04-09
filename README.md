@@ -14,7 +14,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 - [ ] Rexxwell - Minimal working solution for SelectedRoutineView
 - [ ] Rexxwell - Sketch SelectedRoutineView
 - [x] Noah - Skeleton code for ViewModel
-- [ ] Enam - Data fields for Routine (model)
+- [X] Enam - Data fields for Routine (model)
 
 ### Due by 04/15
 
