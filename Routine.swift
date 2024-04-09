@@ -15,9 +15,15 @@ struct Routine: Identifiable {
     var id: String
     // TODO: Add data fields
     // - Title
+    var title: String
     // - Description
+    var description: String
     // - Category (can be string for simplicity)
+    var category: String
     // - Frequency (typically measured in seconds, e.g. 86400 = 1 day)
+    var frequency: Int
     // - List of dates that routine was followed
+    var dates: String
     // - Current streak length
+    var streakLength: Int
 }

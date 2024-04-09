@@ -42,8 +42,9 @@ class ViewModel: ObservableObject {
     /**
      * Add a new routine to the list of routines.
      */
-    func addRoutine(routine: Routine) {
-        
+    func addRoutine(id: String, title: String, description: String, category: String, frequency: Int, dates: String, streakLength: Int) {
+        let routine = Routine(id: id, title: title, description: description, category: category, frequency: frequency, dates: dates, streakLength: streakLength)
+        routines.append(routine)
     }
     
     /**
