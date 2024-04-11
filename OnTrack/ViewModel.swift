@@ -19,6 +19,8 @@ class ViewModel: ObservableObject {
     // User's name from onboarding
     @Published var name: String = ""
     
+    @Published var isOnboarded: Bool = false
+    
     // should increment for generating unique ID's
     var idCounter: Int = 0
     
