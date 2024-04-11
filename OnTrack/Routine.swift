@@ -22,7 +22,17 @@ struct Routine: Identifiable {
     // - Frequency (typically measured in seconds, e.g. 86400 = 1 day)
     var frequency: Int
     // - List of dates that routine was followed
-    var successfulDays: [String]
+    var successfulDays: [Date]
     // - Current streak length
     var currentStreak: Int
+    
+    init(id: String, title: String, description: String, category: String, frequency: Int, successfulDays: [Date], currentStreak: Int) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.category = category
+        self.frequency = frequency
+        self.successfulDays = successfulDays
+        self.currentStreak = currentStreak
+    }
 }
