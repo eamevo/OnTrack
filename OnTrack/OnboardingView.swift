@@ -15,43 +15,43 @@ struct OnboardingView: View {
                 .fontWeight(.bold)
                 .padding()
             
-            Button(action: {
-                // Action when "Yes!" button tapped
-            }) {
-                Text("Yes!")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(10)
-            }
+            NavigationLink(destination: ContentView()) {
+                                Text("Yes!")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                            }
+                            .padding()
+
             .padding()
             
             Spacer()
             
-            HStack(spacing: 20) {
-                BottomButton(imageName: "calendar")
-                BottomButton(imageName: "home")
-                BottomButton(imageName: "target")
-            }
-            .padding()
+//             HStack(spacing: 20) {
+//                 BottomButton(imageName: "calendar")
+//                 BottomButton(imageName: "home")
+//                 BottomButton(imageName: "target")
+//             }
+//             .padding()
         }
     }
 }
 
-struct BottomButton: View {
-    var imageName: String
-    
-    var body: some View {
-        Button(action: {
-            // Action when bottom button tapped
-        }) {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40)
-        }
-    }
-}
+// struct BottomButton: View {
+//     var imageName: String
+//
+//     var body: some View {
+//         Button(action: {
+//             // Action when bottom button tapped
+//         }) {
+//             Image(imageName)
+//                 .resizable()
+//                 .aspectRatio(contentMode: .fit)
+//                 .frame(width: 40, height: 40)
+//         }
+//     }
+// }
 
