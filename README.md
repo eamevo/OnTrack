@@ -6,24 +6,22 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 
 [Google Docs - Planning document](https://docs.google.com/document/d/10MLJMOxv38Fu246DndurLDr7_QEBVr7DyX2Jv6Vz6rM/edit)
 
-### CURRENT TASKS - Due by 04/09
-
-- [ ] Ishika - Minimal working solution for OnboardingView
-- [ ] Ananya - Minimal working solution for ContentView (Main routine list)
-- [ ] David - Minimal working solution for AddRoutineView
-- [ ] Rexxwell - Minimal working solution for SelectedRoutineView
-- [ ] Rexxwell - Sketch SelectedRoutineView
-- [x] Noah - Skeleton code for ViewModel
-- [X] Enam - Data fields for Routine (model)
-
 ### Due by 04/15
 
-- [ ] Full implementation for OnboardingView
-- [ ] Full implementation for ContentView
-- [ ] Full implementation for AddRoutineView
-- [ ] Full implementation for SelectedRoutineView
-- [ ] Full implementation for ViewModel
-- [ ] Additional functionality for Routine (model)
+- [ ] David - Full implementation for AddRoutineView
+- [ ] Rexxwell - Full implementation for SelectedRoutineView
+- [ ] Ishika - Full implementation for OnboardingView
+- [ ] Ananya - Full implementation for ContentView
+- [ ] Enam - Additional functionality for Routine (if needed)
+- Full implementation for ViewModel
+  - [ ] Ishika - `ViewModel.setName()`
+  - [ ] Enam - `ViewModel.getDailyQuote()`
+  - [ ] David - `ViewModel.addRoutine()`
+  - [ ] Ananya - `ViewModel.markRoutine()`
+  - [ ] Ananya - `ViewModel.routineIsComplete()`
+  - [ ] Rexxwell - `ViewModel.deleteRoutine()`
+  - [ ] _Unassigned_ - `ViewModel.saveToStorage()`
+  - [ ] _Unassigned_ - `ViewModel.loadFromStorage()`
 
 ### Due by 04/16
 
@@ -45,18 +43,10 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 
 ## Timeline
 
- - 03/28 - Finalize app concept & set up project repo
- - 04/02 - Sketches of app views
- - 04/09 - Skeleton code (i.e. create class & method signatures) for all classes/structs
+ - 03/28 - **DONE!** Finalize app concept & set up project repo
+ - 04/02 - **DONE!** Sketches of app views
+ - 04/09 - **DONE!** Skeleton code (i.e. create class & method signatures) for all classes/structs
  - 04/15 - Implementation of all classes/structs
  - 04/16 - Presentation slides and demo video
  - 04/18 - **DEMO DAY**
 
-## Old tasks
-
-### Due by 04/02
-
-- [x] Enam - Set up project & publish repo to Github
-- [x] Enam - Sketch OnboardingView
-- [x] Ananya - Sketch ContentView (list of routines)
-- [x] Enam - Sketch AddRoutineView
