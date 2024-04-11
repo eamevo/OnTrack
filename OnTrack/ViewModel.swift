@@ -14,7 +14,9 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     // Published because we want the UI to respond to changes in routines
-    @Published var routines: [Routine] = []
+    @Published var routines: [Routine] = [Routine(id: "1", title: "Hello", description: "This is a test", category: "Activity", frequency: 86400, successfulDays: [], currentStreak: 0)]
+    
+    @Published var selectedRoutine: Int = 0
     
     // User's name from onboarding
     @Published var name: String = ""
@@ -76,6 +78,10 @@ class ViewModel: ObservableObject {
      * Return whether or not it was successful.
      */
     func markRoutine(routine: Routine) -> Bool {
+        return false
+    }
+    
+    func routineIsComplete(routine: Routine) -> Bool {
         return false
     }
     
