@@ -1,24 +1,36 @@
-//
-//  OnboardingView.swift
-//  OnTrack
-//
-//  Handles first user experience after installation.
-//
-//  Created by Noah Sadir on 4/4/24.
-//
-//  Contributors:
-//
-
 import SwiftUI
 
 struct OnboardingView: View {
-    @EnvironmentObject var vm: ViewModel
-    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            
+            Image("OnTrackLogo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200, height: 100)
+            
+            Text("Ready to get started?")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+            
+            NavigationLink(destination: ContentView()) {
+                Text("Yes!")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(10)
+            }
+            .padding()
+            
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    OnboardingView()
+    OnboardingView().environmentObject(ViewModel())
 }
