@@ -2,10 +2,6 @@
 
 A healthy habits tracker which encourages users to stick to routines in a fun, interactive way.
 
-## To-do
-
-[Google Docs - Planning document](https://docs.google.com/document/d/10MLJMOxv38Fu246DndurLDr7_QEBVr7DyX2Jv6Vz6rM/edit)
-
 ### Due by 04/15
 
 - [ ] David - Full implementation for AddRoutineView
@@ -50,3 +46,12 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
  - 04/16 - Presentation slides and demo video
  - 04/18 - **DEMO DAY**
 
+## To-do
+
+This google doc will no longer be updated. Instead, see what tasks have been assigned to you above and
+implement them by making a feature branch _on this repo_.
+
+If you're stuck or unsure what to do, please reach out to me! Also, read through the comments in the 
+view model to get an idea of how to approach the function assigned to you.
+
+[Google Docs - Planning document](https://docs.google.com/document/d/10MLJMOxv38Fu246DndurLDr7_QEBVr7DyX2Jv6Vz6rM/edit)
