@@ -2,6 +2,8 @@
 
 A healthy habits tracker which encourages users to stick to routines in a fun, interactive way.
 
+## To-do
+
 ### Due by 04/15
 
 - [ ] David - Full implementation for AddRoutineView
@@ -45,8 +47,6 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
  - 04/15 - Implementation of all classes/structs
  - 04/16 - Presentation slides and demo video
  - 04/18 - **DEMO DAY**
-
-## To-do
 
 This google doc will no longer be updated. Instead, see what tasks have been assigned to you above and
 implement them by making a feature branch _on this repo_.
