@@ -5,7 +5,7 @@ struct OnboardingView: View {
         VStack {
             Spacer()
             
-            Image("OnTrackLogo")
+            Image("OnTrack")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 100)
