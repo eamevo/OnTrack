@@ -7,12 +7,28 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 ### Due by 04/15
 
 - [ ] David - Full implementation for AddRoutineView
+  - Text field for title
+  - Text field for description
+  - Fixed selection for frequency (radio, segmented control, dropdown, etc.)
+    - Daily, weekly, monthly
+  - Generate ID with view model function (invisible to user)
+  - Set streak to 0 and days completed array as empty (invisible to user)
 - [ ] Rexxwell - Full implementation for SelectedRoutineView
+  - Show task title, description, frequency, days completed, current streak
+  - Delete button which calls `vm.deleteRoutine` (and then goes to `ContentView`)
+  - Back button which goes to `ContentView`
 - [ ] Ishika - Full implementation for OnboardingView
+  - Text field which allows user to enter their username
+  - "Continue" button which calls `setName()` and transitions to `ContentView`
 - [ ] Ananya - Full implementation for ContentView
+  - List which shows all the user's routines
+  - Title and description
+  - Frequency (daily, monthly, weekly)
+  - Checkmark indicating if task is done (calls `vm.markRoutine`)
+  - Info button which goes to `SelectedRoutineView`
 - [ ] Enam - Additional functionality for Routine (if needed)
 - Full implementation for ViewModel
-  - [ ] Ishika - `ViewModel.setName()`
+  - [x] Ishika - `ViewModel.setName()`
   - [ ] Enam - `ViewModel.getDailyQuote()`
   - [ ] David - `ViewModel.addRoutine()`
   - [ ] Ananya - `ViewModel.markRoutine()`
