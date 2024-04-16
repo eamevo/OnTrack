@@ -47,6 +47,7 @@ struct ContentView: View {
                             Text(routine.title)
                                 .bold()
                             Text(routine.description)
+                            Text(frequency(for: routine.frequency))
                         }
                         Spacer()
                         Button(action: {
@@ -85,6 +86,19 @@ struct ContentView: View {
                 .padding()
         }
     }
+    
+    func frequency(for frequency: Int) -> String {
+            switch frequency {
+            case 86400:
+                return "Daily"
+            case 604800:
+                return "Weekly"
+            case 2592000:
+                return "Monthly"
+            default:
+                return "Custom"
+            }
+        }
 }
 
 #Preview {
