@@ -29,7 +29,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 - [ ] Enam - Additional functionality for Routine (if needed)
 - Full implementation for ViewModel
   - [x] Ishika - `ViewModel.setName()`
-  - [ ] Enam - `ViewModel.getDailyQuote()`
+  - [x] Enam - `ViewModel.getDailyQuote()`
   - [ ] David - `ViewModel.addRoutine()`
   - [ ] Ananya - `ViewModel.markRoutine()`
   - [ ] Ananya - `ViewModel.routineIsComplete()`
