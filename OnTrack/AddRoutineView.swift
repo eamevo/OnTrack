@@ -27,14 +27,6 @@ struct AddRoutineView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("OnTrack")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding(.leading)
-                Spacer()
-            }
-            
             Text("Add Routine")
                 .padding(.vertical)
                 .font(.largeTitle)
@@ -50,6 +42,7 @@ struct AddRoutineView: View {
                     .frame(maxHeight: .infinity, alignment: .top)
             }
             .frame(width: 360, height: 70)
+            .border(.black, width: 5)
             
             Spacer()
             
@@ -63,6 +56,7 @@ struct AddRoutineView: View {
                     .frame(maxHeight: .infinity, alignment: .top)
             }
             .frame(width: 360, height: 200)
+            .border(.black, width: 5)
             
             Spacer()
             
@@ -76,14 +70,17 @@ struct AddRoutineView: View {
                     .frame(maxHeight: .infinity, alignment: .top)
             }
             .frame(width: 360, height: 70)
+            .border(.black, width: 5)
             
             Spacer()
             
-            NavigationStack {
-                List(choices, id: \.self, selection: $frequency) { choice in
-                    Text(choice)
-                }
+            List(choices, id: \.self, selection: $frequency) { choice in
+                Text(choice)
             }
+            .scrollContentBackground(.hidden)
+            .background(.cyan)
+            .border(.black, width: 5)
+            
             .frame(width: 360, height: 180)
             
             Spacer()
