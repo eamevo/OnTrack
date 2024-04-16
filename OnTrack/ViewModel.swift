@@ -29,8 +29,38 @@ class ViewModel: ObservableObject {
     // List of daily quotes
     // TODO: Find 31 quotes and add them to this array
     //       (also remove the "Quote 1" that I added as a placeholder)
-    var dailyQuotes: [String] = [
-        "Quote 1",
+      var dailyQuotes: [String] = [
+        "\"Just one small positive thought in the morning can change your whole day.\" — Dalai Lama",
+        "\"Habits change into character.\" — Ovid",
+        "\"If you want to change your world, you need to start cultivating good habits.\" — Mina Tadros",
+        "\"We are what we repeatedly do. Excellence, then, is not an act, but a habit.\" — Aristotle",
+        "\"Habits are never-ending goals, if you think about it. They have no deadline and no endpoint. They are casual daily activities like brushing your teeth or combing your hair.\" — Zoe McKey",
+        "\"Life is habit. Or rather life is a succession of habits.\" — Samuel Beckett",
+        "\"Success is the sum of small efforts repeated day in and day out.\" — Robert Collier",
+        "\"Successful people are simply those with successful habits.\" — Brian Tracy",
+        "\"You’ll never change your life until you change something you do daily. The secret of your success is found in your daily routine.\" — John C. Maxwell",
+        "\"Your positive action combined with positive thinking results in success.\" - Shiv Khera",
+        "\"Every day of our lives, we are on the verge of making those slight changes that would make all the big difference.\" — Mignon McLaughlin",
+        "\"A daily routine built on good habits and disciplines separates the most successful among us from everyone else.\" — Darren Hardy",
+        "\"Success has a simple formula: do your best, and people may like it.\" — Sam Ewing",
+        "\"Always do your best. What you plant now, you will harvest later.\" — Og Mandino",
+        "\"If you don’t like the road you’re walking, start paving another one.\" — Dolly Parton",
+        "\"Dreaming, after all, is a form of planning.\" — Gloria Steinem",
+        "\"Before anything else, preparation is the key to success.\" — Alexander Graham Bell",
+        "\"If you are going to achieve excellence in big things, you develop the habit in little matters. Excellence is not an exception, it is a prevailing attitude.\" — Colin Powell",
+        "\"Excellence is not a singular act, but a habit. You are what you repeatedly do.\" — Shaquille O’Neal",
+        "\"Winners make a habit of doing things losers don’t want to do.\" — Lucas Remmerswaal",
+        "\"We become what we repeatedly do.\" ― Sean Covey",
+        "\"Habits are the invisible architecture of everyday life.\" - James Clear",
+        "\"A nail is driven out by another nail; habit is overcome by habit.\" — Erasmus",
+        "\"Powerful indeed is the empire of habit.\" — Publicus Syrus",
+        "\"Motivation is what gets you started. Habit is what keeps you going.\" — Jim Ryuh",
+        "\"What you do every day matters more than what you do once in a while.\" — Gretchen Rubin",
+        "\"Let go of your old tired habits and plant new habits in fertile soil.\" — Harley King",
+        "\"The secret of your future is hidden in your daily routine.\" — Mike Murdock",
+        "\"Quality is not an act, it is a habit.\" — Aristotle",
+        "\"Habits are like a cable. We weave a strand of it every day and soon it cannot be broken.\" — Horace Mann",
+        "\"Good habits are the key to all success.\" — Og Mandino"
     ]
     
     /**
@@ -43,11 +73,15 @@ class ViewModel: ObservableObject {
     /**
      * Get the quote of the day. Return a single string.
      */
-    func getDailyQuote() -> String {
+   func getDailyQuote() -> String {
         // TODO: Index the quote array by the current day of the month
-        //       and return the quote string
+        let calendar = Calendar.current
+        let dayOfMonth = calendar.component(.day, from: Date())
+        let quoteIndex = dayOfMonth - 1
         
-        return ""
+        
+        //       and return the quote string
+        return dailyQuotes[quoteIndex]
     }
     
     /**
