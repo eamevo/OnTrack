@@ -21,6 +21,7 @@ struct ContentView: View {
     // State vars which manage whether add/selected view is visible
     @State var selectedRoutineViewVisible = false
     @State var addRoutineViewVisible = false
+    @State var onboardingViewVisible = false
     
     var body: some View {
         VStack {
@@ -77,6 +78,7 @@ struct ContentView: View {
             Button(action: {
                 // setting this to true makes the sheet pop up
                 addRoutineViewVisible = true
+                print(vm.name)
             }) {
                 Text("Add Routine")
             }.sheet(isPresented: $addRoutineViewVisible, content: {
@@ -90,6 +92,11 @@ struct ContentView: View {
                 
             Text("\(numComplete)/\(vm.routines.count)")
                 .padding()
+        }.sheet(isPresented: $onboardingViewVisible, content: {
+            OnboardingView()
+        })
+        .onAppear() {
+            onboardingViewVisible = !vm.isOnboarded
         }
     }
 

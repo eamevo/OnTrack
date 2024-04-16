@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @EnvironmentObject var viewModel: ViewModel
+    @Environment(\.dismiss) var dismiss
     @State private var userName: String = ""
-    @StateObject var viewModel = ViewModel()
+    
+    @State var onboardingViewVisible: Bool = true
     
     var body: some View {
         GeometryReader { geometry in
@@ -24,26 +27,27 @@ struct OnboardingView: View {
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(.none)
-            
                 
                 Button(action: {
                     viewModel.setName(name: userName)
+                    viewModel.isOnboarded = true
+                    print(viewModel.name)
+                    dismiss()
                 }) {
-                    NavigationLink(destination: ContentView()) {
-                        Text("Get Started!")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(10)
-                    }
+                    Text("Get Started!")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
                 }
                 .padding()
                 
                 Spacer()
             }
         }
+        .interactiveDismissDisabled(!viewModel.isOnboarded)
     }
 }
 
