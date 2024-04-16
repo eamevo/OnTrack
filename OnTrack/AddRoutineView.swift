@@ -12,6 +12,7 @@
 import SwiftUI
 
 struct AddRoutineView: View {
+    @Environment(\.dismiss) var dismiss
     let choices = [
         "Daily",
         "Weekly",
@@ -91,6 +92,7 @@ struct AddRoutineView: View {
             Button(action: {
                 vm.addRoutine(title: title, description: description, category: category, frequency: frequency!)
                 print(vm.routines)
+                dismiss()
             }, label: {
                 ZStack {
                     Capsule(style: RoundedCornerStyle.circular)
