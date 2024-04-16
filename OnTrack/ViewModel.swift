@@ -103,7 +103,7 @@ class ViewModel: ObservableObject {
      * Add a new routine to the list of routines.
      */
     func addRoutine(routine: Routine) {
-        // TODO: Append routines list with this new routine
+        routines.append(routine)
     }
     
     /**
@@ -128,23 +128,40 @@ class ViewModel: ObservableObject {
      * Return whether or not it was successful.
      */
     func markRoutine(routine: Routine) -> Bool {
-        // TODO: Append the current date to the routine.
-        //       Then, register the changes with the routines list
-        //       using the provided `editRoutine` function
+        var newRoutine = routine
+        let date = Date()
+        //Unsure about this
+        if let last = routine.successfulDays.last as Date? {
+            if Calendar.current.isDateInToday(last) {
+                return false
+            }
+        }
+        newRoutine.successfulDays.append(date)
+        //Unsure about this
+        let days = routine.successfulDays.last.map { lastDate in Calendar.current.dateComponents([.day], from: lastDate).day} ?? 0
         
-        return false
+        if editRoutine(routine: newRoutine) {
+            return true
+        } else {
+            return false
+        }
+        
+        if days <= 1 {
+            newRoutine.currentStreak += 1
+        } else {
+            newRoutine.currentStreak = 1
+        }
     }
     
     func routineIsComplete(routine: Routine) -> Bool {
-        // TODO: Get the current date and subtract by the frequency
-        //       Then, get the last item from routine.
-        //       If the last item is before the subtracted date, return false
-        //       otherwise, return true.
-        //
-        // **HINT** Use the `timeIntervalSince1970` property of Date
-        //          https://stackoverflow.com/questions/25096602/get-unix-epoch-time-in-swift
-        
-        return false
+        let date = Date()
+        let newDate = date.addingTimeInterval(-Double(routine.frequency))
+        //Unsure about this
+        if let lastDate = routine.successfulDays.last as Date? {
+            return lastDate >= newDate
+        } else {
+            return false
+        }
     }
     
     /**
