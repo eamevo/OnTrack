@@ -38,7 +38,7 @@ struct ContentView: View {
                             vm.markRoutine(routine: routine)
                             numComplete = 0
                             for aRoutine in vm.routines {
-                                if (vm.routineisComplete(aRoutine)) {
+                                if (vm.routineIsComplete(routine: aRoutine)) {
                                     numComplete += 1
                                 }
                             }
