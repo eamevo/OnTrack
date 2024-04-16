@@ -68,6 +68,21 @@ class ViewModel: ObservableObject {
      */
     func setName(name: String) {
         // TODO: set the name variable in the view model to the provided name
+        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmedName.isEmpty {
+            print("Error: Name cannot be empty.")
+            return
+        }
+        
+        let alphanumericPattern = "^[a-zA-Z0-9]*$"
+            if let regex = try? NSRegularExpression(pattern: alphanumericPattern) {
+                if regex.firstMatch(in: trimmedName, options: [], range: NSRange(location: 0, length: trimmedName.utf16.count)) == nil {
+                    print("Error: Name must contain only alphanumeric characters.")
+                    return
+                }
+            }
+        
+        self.name = trimmedName
     }
     
     /**
