@@ -36,6 +36,12 @@ struct ContentView: View {
                         
                         Button(action: {
                             vm.markRoutine(routine: routine)
+                            numComplete = 0
+                            for aRoutine in vm.routines {
+                                if (aRoutine.routineisComplete()) {
+                                    numComplete += 1
+                                }
+                            }
                         }) {
                             Image(systemName: vm.routineIsComplete(routine: routine) ? "checkmark.square" : "square")
                         }
