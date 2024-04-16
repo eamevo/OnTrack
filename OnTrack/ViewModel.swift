@@ -102,8 +102,19 @@ class ViewModel: ObservableObject {
     /**
      * Add a new routine to the list of routines.
      */
-    func addRoutine(routine: Routine) {
-        // TODO: Append routines list with this new routine
+    func addRoutine(title: String, description: String, category: String, frequency: String) {
+        var frequencyInt: Int = 0;
+        if (frequency == "Daily") {
+            frequencyInt = 86400;
+        }
+        if (frequency == "Weekly") {
+            frequencyInt = 604800;
+        }
+        if (frequency == "Monthly") {
+            frequencyInt = 2628288
+        }
+        let routine = Routine(id: generateUniqueId(), title: title, description: description, category: category, frequency: frequencyInt, successfulDays: [], currentStreak: 0)
+        routines.append(routine)
     }
     
     /**
