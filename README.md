@@ -4,9 +4,9 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 
 ## To-do
 
-### Due by 04/15
+### Due by 04/16
 
-- [ ] David - Full implementation for AddRoutineView
+- [x] David - Full implementation for AddRoutineView
   - Text field for title
   - Text field for description
   - Fixed selection for frequency (radio, segmented control, dropdown, etc.)
@@ -17,35 +17,28 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
   - Show task title, description, frequency, days completed, current streak
   - Delete button which calls `vm.deleteRoutine` (and then goes to `ContentView`)
   - Back button which goes to `ContentView`
-- [ ] Ishika - Full implementation for OnboardingView
+- [x] Ishika - Full implementation for OnboardingView
   - Text field which allows user to enter their username
   - "Continue" button which calls `setName()` and transitions to `ContentView`
-- [ ] Ananya - Full implementation for ContentView
+- [x] Ananya - Full implementation for ContentView
   - List which shows all the user's routines
   - Title and description
   - Frequency (daily, monthly, weekly)
   - Checkmark indicating if task is done (calls `vm.markRoutine`)
   - Info button which goes to `SelectedRoutineView`
-- [ ] Enam - Additional functionality for Routine (if needed)
+- [x] Enam - Additional functionality for Routine (if needed)
 - Full implementation for ViewModel
   - [x] Ishika - `ViewModel.setName()`
   - [x] Enam - `ViewModel.getDailyQuote()`
-  - [ ] David - `ViewModel.addRoutine()`
-  - [ ] Ananya - `ViewModel.markRoutine()`
-  - [ ] Ananya - `ViewModel.routineIsComplete()`
+  - [x] David - `ViewModel.addRoutine()`
+  - [x] Ananya - `ViewModel.markRoutine()`
+  - [x] Ananya - `ViewModel.routineIsComplete()`
   - [ ] Rexxwell - `ViewModel.deleteRoutine()`
-  - [ ] _Unassigned_ - `ViewModel.saveToStorage()`
-  - [ ] _Unassigned_ - `ViewModel.loadFromStorage()`
 
-### Due by 04/16
+### Due by 04/18
 
-- [ ] Introductory slides
-- [ ] Slide for OnboardingView
-- [ ] Slide for ContentView
-- [ ] Slide for AddRoutineView
-- [ ] Slide for SelectedRoutineView
-- [ ] Slide for backend architecture (VM and Model)
-- [ ] Demo video
+- [ ] App summary slide
+- [ ] Implementation slide
 
 ## Feature Highlights
 
