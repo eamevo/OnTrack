@@ -14,7 +14,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var vm: ViewModel
-    var numComplete: Int = 0
+    @State var numComplete: Int = 0
     
     var list: [String] = ["Hello", "World"]
     
@@ -38,7 +38,7 @@ struct ContentView: View {
                             vm.markRoutine(routine: routine)
                             numComplete = 0
                             for aRoutine in vm.routines {
-                                if (aRoutine.routineisComplete()) {
+                                if (vm.routineisComplete(aRoutine)) {
                                     numComplete += 1
                                 }
                             }
