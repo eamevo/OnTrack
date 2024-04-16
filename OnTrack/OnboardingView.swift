@@ -1,32 +1,48 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @State private var userName: String = ""
+    @StateObject var viewModel = ViewModel()
+    
     var body: some View {
-        VStack {
-            Spacer()
-            
-            Image("OnTrack")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 100)
-            
-            Text("Ready to get started?")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding()
-            
-            NavigationLink(destination: ContentView()) {
-                Text("Yes!")
-                    .font(.title2)
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                
+                Image("OnTrack")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.22)
+                    
+                
+                Text("Ready to get started?")
+                    .font(.title)
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
                     .padding()
-                    .background(Color.blue)
-                    .cornerRadius(10)
-            }
-            .padding()
+                
+                TextField("Enter your name", text: $userName)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .autocapitalization(.none)
             
-            Spacer()
+                
+                Button(action: {
+                    viewModel.setName(name: userName)
+                }) {
+                    NavigationLink(destination: ContentView()) {
+                        Text("Get Started!")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                    }
+                }
+                .padding()
+                
+                Spacer()
+            }
         }
     }
 }
