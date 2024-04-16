@@ -14,7 +14,7 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     // Published because we want the UI to respond to changes in routines
-    @Published var routines: [Routine] = [Routine(id: "1", title: "Hello", description: "This is a test", category: "Activity", frequency: 86400, successfulDays: [], currentStreak: 0)]
+    @Published var routines: [Routine] = [Routine(id: "0", title: "Hello", description: "This is a test", category: "Activity", frequency: 86400, successfulDays: [], currentStreak: 0)]
     
     @Published var selectedRoutine: Int = 0
     
