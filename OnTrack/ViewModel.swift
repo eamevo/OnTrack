@@ -126,7 +126,10 @@ class ViewModel: ObservableObject {
         // TODO: Find the index of the provided routine
         //       and delete it from the array
         //       (hint: see the function at the bottom)
-        
+        if let index = getRoutineIndex(routine: routine) {
+            routines.remove(at: index)
+            return true
+        }
         return false
     }
     

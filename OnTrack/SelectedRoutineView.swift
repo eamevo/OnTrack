@@ -16,7 +16,7 @@ struct SelectedRoutineView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        var days: Int =  vm.routines[vm.selectedRoutine].frequency / 86400
+        let days: Int =  vm.routines[vm.selectedRoutine].frequency / 86400
         
         // The top view of the selected routine
         VStack {
@@ -37,8 +37,9 @@ struct SelectedRoutineView: View {
                     .font(.system(.largeTitle, design: .monospaced))
                 Spacer()
                 
-                Button("Edit") {
-                    // implement the Edit button to edit the Selected Routine.
+                Button("Delete") {
+                    vm.deleteRoutine(routine: vm.routines[vm.selectedRoutine]) // Crashes when Delete button gets clicked. selectedRoutine is not a optional. IndexOutOfBoundsError after deleting the routine.
+                    dismiss()
                 }
                 .font(.system(.body, design: .monospaced))
                 .fontWeight(.bold)
@@ -58,29 +59,27 @@ struct SelectedRoutineView: View {
                 
                 Spacer()
                 
-                Button("History") {
-                    // implement a new View when History button gets clicked
-                }
-                .buttonStyle(.borderedProminent)
-                .font(.body)
-                
-                Spacer()
-                
-                Button("Charts") {
-                    // implement a new View when Charts button gets clicked
-                }
-                .buttonStyle(.borderedProminent)
-                .font(.body)
-                
-                Spacer()
-                
-                Button("Records") {
-                    // implement a new View when Records button gets clicked
-                }
-                .buttonStyle(.borderedProminent)
-                .font(.body)
-                
-                Spacer()
+//                Button("History") {
+//                    // implement a new View when History button gets clicked
+//                }
+//                .buttonStyle(.borderedProminent)
+//                .font(.body)
+//                
+//                Spacer()
+//                
+//                Button("Charts") {
+//                    // implement a new View when Charts button gets clicked
+//                }
+//                .buttonStyle(.borderedProminent)
+//                .font(.body)
+//                
+//                Spacer()
+//                
+//                Button("Records") {
+//                    // implement a new View when Records button gets clicked
+//                }
+//                .buttonStyle(.borderedProminent)
+//                .font(.body)
             }
             .font(.system(.title3, design: .monospaced))
             .fontWeight(.bold)
@@ -95,29 +94,38 @@ struct SelectedRoutineView: View {
             HStack {
                 Text("Description")
                     .frame(alignment: .leading)
-                    .padding(5)
                     .fontWeight(.bold)
                     .font(.system(.headline, design: .monospaced))
-            }
                 
-            Text("\(vm.routines[vm.selectedRoutine].description)")
-                .frame(width: 0.9 * UIScreen.main.bounds.width, alignment: .leading)
-                .font(.system(.body, design: .monospaced))
+                Spacer()
+            }
+            .padding(.leading)
+            .padding(.top)
+            
+            HStack {
+                Text("\(vm.routines[vm.selectedRoutine].description)")
+                    .frame(alignment: .leading)
+                    .font(.system(.body, design: .monospaced))
+                
+                Spacer()
+            }
+            .padding(.leading)
             
             HStack {
                 Text("Category:")
-                    .padding(5)
                     .fontWeight(.bold)
                     .font(.system(.headline, design: .monospaced))
                 
                 Text("\(vm.routines[vm.selectedRoutine].category)")
                     .font(.system(.body, design: .monospaced))
+                
+                Spacer()
             }
-            .frame(width: 0.9 * UIScreen.main.bounds.width, alignment: .leading)
+            .padding(.leading)
+            .padding(.top)
             
             HStack {
                 Text("Frequency:")
-                    .padding(5)
                     .fontWeight(.bold)
                     .font(.system(.headline, design: .monospaced))
                 
@@ -128,12 +136,14 @@ struct SelectedRoutineView: View {
                     Text("Every \(days) Days")
                         .font(.system(.body, design: .monospaced))
                 }
+                
+                Spacer()
             }
-            .frame(width: 0.9 * UIScreen.main.bounds.width, alignment: .leading)
+            .padding(.leading)
+            .padding(.top)
             
             HStack {
                 Text("Current Streak:")
-                    .padding(5)
                     .fontWeight(.bold)
                     .font(.system(.headline, design: .monospaced))
                 
@@ -144,8 +154,11 @@ struct SelectedRoutineView: View {
                     Text("\(vm.routines[vm.selectedRoutine].currentStreak) time(s)")
                         .font(.system(.body, design: .monospaced))
                 }
+                
+                Spacer()
             }
-            .frame(width: 0.9 * UIScreen.main.bounds.width, alignment: .leading)
+            .padding(.leading)
+            .padding(.top)
             
             HStack {
                 if (vm.routines[vm.selectedRoutine].currentStreak == 0) {
@@ -153,8 +166,10 @@ struct SelectedRoutineView: View {
                 } else {
                     Text("Keep going! You are doing great!")
                 }
+                
+                Spacer()
             }
-            .frame(width: 0.9 * UIScreen.main.bounds.width, alignment: .center)
+            .padding(.leading)
             .font(.system(.body, design: .monospaced))
             .fontWeight(.bold)
             .foregroundStyle(.gray)
