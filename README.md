@@ -13,7 +13,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
     - Daily, weekly, monthly
   - Generate ID with view model function (invisible to user)
   - Set streak to 0 and days completed array as empty (invisible to user)
-- [ ] Rexxwell - Full implementation for SelectedRoutineView
+- [x] Rexxwell - Full implementation for SelectedRoutineView
   - Show task title, description, frequency, days completed, current streak
   - Delete button which calls `vm.deleteRoutine` (and then goes to `ContentView`)
   - Back button which goes to `ContentView`
@@ -33,7 +33,7 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
   - [x] David - `ViewModel.addRoutine()`
   - [x] Ananya - `ViewModel.markRoutine()`
   - [x] Ananya - `ViewModel.routineIsComplete()`
-  - [ ] Rexxwell - `ViewModel.deleteRoutine()`
+  - [x] Rexxwell - `ViewModel.deleteRoutine()`
 
 ### Due by 04/18
 
