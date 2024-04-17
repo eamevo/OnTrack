@@ -4,37 +4,6 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
 
 ## To-do
 
-### Due by 04/16
-
-- [x] David - Full implementation for AddRoutineView
-  - Text field for title
-  - Text field for description
-  - Fixed selection for frequency (radio, segmented control, dropdown, etc.)
-    - Daily, weekly, monthly
-  - Generate ID with view model function (invisible to user)
-  - Set streak to 0 and days completed array as empty (invisible to user)
-- [x] Rexxwell - Full implementation for SelectedRoutineView
-  - Show task title, description, frequency, days completed, current streak
-  - Delete button which calls `vm.deleteRoutine` (and then goes to `ContentView`)
-  - Back button which goes to `ContentView`
-- [x] Ishika - Full implementation for OnboardingView
-  - Text field which allows user to enter their username
-  - "Continue" button which calls `setName()` and transitions to `ContentView`
-- [x] Ananya - Full implementation for ContentView
-  - List which shows all the user's routines
-  - Title and description
-  - Frequency (daily, monthly, weekly)
-  - Checkmark indicating if task is done (calls `vm.markRoutine`)
-  - Info button which goes to `SelectedRoutineView`
-- [x] Enam - Additional functionality for Routine (if needed)
-- Full implementation for ViewModel
-  - [x] Ishika - `ViewModel.setName()`
-  - [x] Enam - `ViewModel.getDailyQuote()`
-  - [x] David - `ViewModel.addRoutine()`
-  - [x] Ananya - `ViewModel.markRoutine()`
-  - [x] Ananya - `ViewModel.routineIsComplete()`
-  - [x] Rexxwell - `ViewModel.deleteRoutine()`
-
 ### Due by 04/18
 
 - [ ] App summary slide
@@ -53,8 +22,8 @@ A healthy habits tracker which encourages users to stick to routines in a fun, i
  - 03/28 - **DONE!** Finalize app concept & set up project repo
  - 04/02 - **DONE!** Sketches of app views
  - 04/09 - **DONE!** Skeleton code (i.e. create class & method signatures) for all classes/structs
- - 04/15 - Implementation of all classes/structs
- - 04/16 - Presentation slides and demo video
+ - 04/16 - **DONE!** Implementation of all classes/structs
+ - 04/18 - Presentation slides and demo video
  - 04/18 - **DEMO DAY**
 
 This google doc will no longer be updated. Instead, see what tasks have been assigned to you above and
