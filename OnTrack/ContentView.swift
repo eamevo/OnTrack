@@ -25,11 +25,32 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Hello, \(vm.name)")
-                .padding()
+            HStack {
+                Text("Hello, \(vm.name)")
+                    .bold()
+                    .font(.title)
+                Spacer()
+                Button(action: {
+                    // setting this to true makes the sheet pop up
+                    addRoutineViewVisible = true
+                    print(vm.name)
+                }) {
+                    Image(systemName: "plus")
+                }.sheet(isPresented: $addRoutineViewVisible, content: {
+                    // present AddRoutineView when button clicked
+                    AddRoutineView()
+                        .onDisappear() { // when view disappears, reset bool
+                        addRoutineViewVisible = false
+                    }
+                })
+            }
+            .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
+            
             
             Text(vm.getDailyQuote())
-                .padding()
+                .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                .italic()
+                .foregroundStyle(.gray)
             
             List() {
                 ForEach(vm.routines) { (routine: Routine) in
@@ -45,6 +66,8 @@ struct ContentView: View {
                             }
                         }) {
                             Image(systemName: vm.routineIsComplete(routine: routine) ? "checkmark.square" : "square")
+                                .font(.system(size: 24))
+                                .foregroundStyle(.blue)
                         }
                         // prevents whole list from being clickable
                         .buttonStyle(PlainButtonStyle())
@@ -55,13 +78,17 @@ struct ContentView: View {
                                 .bold()
                             Text(routine.description)
                             Text(frequency(for: routine.frequency))
+                                .italic()
                         }
                         Spacer()
                         Button(action: {
                             // setting this to true makes the sheet pop up
+                            vm.selectedRoutine = routine
                             selectedRoutineViewVisible = true
                         }) {
                             Image(systemName: "info.circle")
+                                .font(.system(size: 24))
+                                .foregroundStyle(.blue)
                         }
                         .sheet(isPresented: $selectedRoutineViewVisible, content: {
                             SelectedRoutineView()
@@ -74,24 +101,16 @@ struct ContentView: View {
                     }
                 }
             }
+            if numComplete < vm.routines.count {
+                Text("On track with \(numComplete) of \(vm.routines.count) routines")
+                    .padding()
+            } else {
+                Text("On track with all routines!")
+                    .padding()
+                    .foregroundStyle(.green)
+                    .bold()
+            }
             
-            Button(action: {
-                // setting this to true makes the sheet pop up
-                addRoutineViewVisible = true
-                print(vm.name)
-            }) {
-                Text("Add Routine")
-            }.sheet(isPresented: $addRoutineViewVisible, content: {
-                // present AddRoutineView when button clicked
-                AddRoutineView()
-                    .onDisappear() { // when view disappears, reset bool
-                    addRoutineViewVisible = false
-                }
-            })
-            .padding()
-                
-            Text("\(numComplete)/\(vm.routines.count)")
-                .padding()
         }.sheet(isPresented: $onboardingViewVisible, content: {
             OnboardingView()
         })
@@ -103,13 +122,13 @@ struct ContentView: View {
     func frequency(for frequency: Int) -> String {
             switch frequency {
             case 86400:
-                return "Daily"
+                return "Daily task"
             case 604800:
-                return "Weekly"
+                return "Weekly task"
             case 2592000:
-                return "Monthly"
+                return "Monthly task"
             default:
-                return "Custom"
+                return "Custom task"
             }
         }
 }

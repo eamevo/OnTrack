@@ -14,9 +14,9 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     // Published because we want the UI to respond to changes in routines
-    @Published var routines: [Routine] = [Routine(id: "0", title: "Hello", description: "This is a test", category: "Activity", frequency: 86400, successfulDays: [], currentStreak: 0)]
+    @Published var routines: [Routine] = [Routine(id: "0", title: "Get more exercise", description: "at least 30 mins a day", category: "Fitness", frequency: 86400, successfulDays: [], currentStreak: 0)]
     
-    @Published var selectedRoutine: Int = 0
+    @Published var selectedRoutine: Routine? = nil
     
     // User's name from onboarding
     @Published var name: String = ""
@@ -74,7 +74,7 @@ class ViewModel: ObservableObject {
             return
         }
         
-        let alphanumericPattern = "^[a-zA-Z0-9]*$"
+        let alphanumericPattern = "^[ a-zA-Z0-9]*$"
             if let regex = try? NSRegularExpression(pattern: alphanumericPattern) {
                 if regex.firstMatch(in: trimmedName, options: [], range: NSRange(location: 0, length: trimmedName.utf16.count)) == nil {
                     print("Error: Name must contain only alphanumeric characters.")

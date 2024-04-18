@@ -27,10 +27,37 @@ struct AddRoutineView: View {
     
     var body: some View {
         VStack {
-            Text("Add Routine")
-                .padding(.vertical)
-                .font(.largeTitle)
-               .italic()
+            HStack {
+                
+                Button(action: {
+                    // implement the Back button to go back to the ContentView.
+                    dismiss()
+                }, label: {
+                    Image(systemName: "arrow.left")
+                        .font(.system(size: 22))
+                        .foregroundStyle(.blue)
+                })
+                .fontWeight(.bold)
+                
+                Spacer()
+                
+                Text("Add Routine")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.system(.title, design: .default))
+                Spacer()
+                
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "trash")
+                        .font(.system(size: 22))
+                        .foregroundStyle(.red)
+                })
+                .hidden()
+                .fontWeight(.bold)
+            }
+            .frame(alignment: .center)
+            .padding()
         
             ZStack {
                 Rectangle()
@@ -41,10 +68,9 @@ struct AddRoutineView: View {
                     .padding([.leading, .top])
                     .frame(maxHeight: .infinity, alignment: .top)
             }
-            .frame(width: 360, height: 70)
+            .frame(height: 60)
             .border(.black, width: 5)
-            
-            Spacer()
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
             
             ZStack {
                 Rectangle()
@@ -55,10 +81,8 @@ struct AddRoutineView: View {
                     .padding([.leading, .top])
                     .frame(maxHeight: .infinity, alignment: .top)
             }
-            .frame(width: 360, height: 200)
             .border(.black, width: 5)
-            
-            Spacer()
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
             
             ZStack {
                 Rectangle()
@@ -69,19 +93,18 @@ struct AddRoutineView: View {
                     .padding([.leading, .top])
                     .frame(maxHeight: .infinity, alignment: .top)
             }
-            .frame(width: 360, height: 70)
+            .frame(height: 60)
             .border(.black, width: 5)
-            
-            Spacer()
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
             
             List(choices, id: \.self, selection: $frequency) { choice in
                 Text(choice)
             }
             .scrollContentBackground(.hidden)
             .background(.cyan)
+            .frame(height: 180)
             .border(.black, width: 5)
-            
-            .frame(width: 360, height: 180)
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
             
             Spacer()
 

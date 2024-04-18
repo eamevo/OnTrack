@@ -16,37 +16,44 @@ struct SelectedRoutineView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        let days: Int =  vm.routines[vm.selectedRoutine].frequency / 86400
+        let days: Int =  (vm.selectedRoutine?.frequency ?? 0) / 86400
         
         // The top view of the selected routine
         VStack {
             HStack {
-                Spacer()
                 
-                Button("Back") {
+                Button(action: {
                     // implement the Back button to go back to the ContentView.
                     dismiss()
-                }
-                .font(.system(.body, design: .monospaced))
+                }, label: {
+                    Image(systemName: "arrow.left")
+                        .font(.system(size: 22))
+                        .foregroundStyle(.blue)
+                })
                 .fontWeight(.bold)
                 
                 Spacer()
                 
-                Text("\(vm.routines[vm.selectedRoutine].title)")
+                Text(vm.selectedRoutine?.title ?? "No item")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .font(.system(.largeTitle, design: .monospaced))
+                    .font(.system(.title, design: .default))
                 Spacer()
                 
-                Button("Delete") {
-                    vm.deleteRoutine(routine: vm.routines[vm.selectedRoutine]) // Crashes when Delete button gets clicked. selectedRoutine is not a optional. IndexOutOfBoundsError after deleting the routine.
+                Button(action: {
+                    if let selectedRoutineItem = vm.selectedRoutine {
+                        vm.deleteRoutine(routine: selectedRoutineItem) // Crashes when Delete button gets clicked. selectedRoutine is not a optional. IndexOutOfBoundsError after deleting the routine.
+                    }
+                   
                     dismiss()
-                }
-                .font(.system(.body, design: .monospaced))
+                }, label: {
+                    Image(systemName: "trash")
+                        .font(.system(size: 22))
+                        .foregroundStyle(.red)
+                })
                 .fontWeight(.bold)
-                
-                Spacer()
             }
-            .frame(height: 100, alignment: .center)
+            .frame(height: 40, alignment: .center)
+            .padding()
             
             HStack {
                 Spacer()
@@ -100,28 +107,31 @@ struct SelectedRoutineView: View {
                 Spacer()
             }
             .padding(.leading)
+            .padding(.trailing)
             .padding(.top)
             
             HStack {
-                Text("\(vm.routines[vm.selectedRoutine].description)")
+                Text(vm.selectedRoutine?.description ?? "No item selected.")
                     .frame(alignment: .leading)
                     .font(.system(.body, design: .monospaced))
                 
                 Spacer()
             }
             .padding(.leading)
+            .padding(.trailing)
             
             HStack {
                 Text("Category:")
                     .fontWeight(.bold)
                     .font(.system(.headline, design: .monospaced))
                 
-                Text("\(vm.routines[vm.selectedRoutine].category)")
+                Text(vm.selectedRoutine?.category ?? "")
                     .font(.system(.body, design: .monospaced))
                 
                 Spacer()
             }
             .padding(.leading)
+            .padding(.trailing)
             .padding(.top)
             
             HStack {
@@ -140,28 +150,32 @@ struct SelectedRoutineView: View {
                 Spacer()
             }
             .padding(.leading)
+            .padding(.trailing)
             .padding(.top)
             
             HStack {
                 Text("Current Streak:")
                     .fontWeight(.bold)
                     .font(.system(.headline, design: .monospaced))
-                
-                if (vm.routines[vm.selectedRoutine].currentStreak == 0) {
-                    Text("\(vm.routines[vm.selectedRoutine].currentStreak) time(s)")
-                        .font(.system(.body, design: .monospaced))
-                } else {
-                    Text("\(vm.routines[vm.selectedRoutine].currentStreak) time(s)")
-                        .font(.system(.body, design: .monospaced))
+                if let selectedRoutineItem = vm.selectedRoutine {
+                    if (selectedRoutineItem.currentStreak == 0) {
+                        Text("\(selectedRoutineItem.currentStreak) time(s)")
+                            .font(.system(.body, design: .monospaced))
+                    } else {
+                        Text("\(selectedRoutineItem.currentStreak) time(s)")
+                            .font(.system(.body, design: .monospaced))
+                    }
                 }
+                
                 
                 Spacer()
             }
             .padding(.leading)
             .padding(.top)
+            .padding(.trailing)
             
             HStack {
-                if (vm.routines[vm.selectedRoutine].currentStreak == 0) {
+                if ((vm.selectedRoutine?.currentStreak ?? 0) == 0) {
                     Text("Start the day with a new habit! You got this!")
                 } else {
                     Text("Keep going! You are doing great!")
@@ -170,13 +184,13 @@ struct SelectedRoutineView: View {
                 Spacer()
             }
             .padding(.leading)
+            .padding(.trailing)
             .font(.system(.body, design: .monospaced))
             .fontWeight(.bold)
             .foregroundStyle(.gray)
                 
             Spacer()
         }
-        .preferredColorScheme(.light)
     }
 }
 
